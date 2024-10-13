@@ -5,8 +5,8 @@ from tkinter.messagebox import showerror
 import customtkinter as ctk
 from PIL import Image
 
-from src.favorite.config_favorite_products import *
-from src.load.save_and_load_data import SaveAndLoadData as sld
+from src.favorite.config_favorite_product import *
+from src.load.sava_and_load_data import SaveAndLoadData as sld
 from src.top.top_lvl_pages import ConfirmationClearScrollPlace, ConfirmationPage, AddProduct
 
 
