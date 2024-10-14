@@ -141,3 +141,25 @@ class EditNameShoppingList(AddNewCategory):
         self.__main_window.deiconify()
 
         self.destroy()
+
+
+class EditProduct(ctk.CTkToplevel):
+    """
+    Класс, описывающий функционал окна верхнего уровня и его виджеты
+    """
+    def __init__(self, main_window, scroll_frame, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__main_window = main_window
+        self.__scroll_frame = scroll_frame
+
+        self.__name_product = None
+        self.__count_product = None
+        self.__category_product = None
+
+        self.__list_categories = sld.read_categories()
+
+        self.__config_window()
+        self.__config_logo()
+        self.__config_input_fields()
+        self.__config_menu_buttons()
+        self.__config_category_list()
