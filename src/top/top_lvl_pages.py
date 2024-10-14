@@ -6,6 +6,8 @@ from src.top.config_top_level_pages import *
 from src.load.save_and_load_data import SaveAndLoadData as sld
 from src.templates.templates import Templates
 
+
+
 class AddNewCategory(ctk.CTkToplevel):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
@@ -22,3 +24,12 @@ class AddNewCategory(ctk.CTkToplevel):
         self.__config_window()
         self.__config_input_field()
         self.__config_menu_buttons()
+
+
+    def __config_window(self) -> None:
+        """
+        Формирует параметры и стили главного окна приложения
+        """
+        self.geometry(gt_cw_anc)
+        self.title(ttl_cw_anc)
+        self.resizable(wh_rzb, ht_rzb)
