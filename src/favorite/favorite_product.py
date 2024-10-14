@@ -92,6 +92,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
             checkbox.destroy()
             self.__list_checkboxes.remove(checkbox)
 
+
     def clear_scroll_frame(self) -> None:
         """
         Удаляет все чекбоксы из скролл фрейма.
@@ -99,6 +100,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
         for checkbox in self.__list_checkboxes:
             checkbox.destroy()
         self.__list_checkboxes.clear()
+
 
     def reset_checkboxes(self) -> None:
         """
