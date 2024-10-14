@@ -51,6 +51,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
         self.__list_checkboxes.append(product)
 
+
     def check_selected_checkbox(self) -> bool:
         """
         Обходит список чекбоксов, определяет активный чекбокс если такой имеется вернет True,
@@ -60,6 +61,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
             if checkbox.get() == 1:
                 return True
         return False
+
 
     def create_list_select_checkboxes(self) -> list[ctk.CTkCheckBox]:
         """
