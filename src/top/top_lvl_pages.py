@@ -2,7 +2,6 @@ import customtkinter as ctk
 from PIL import Image
 from tkinter.messagebox import showerror
 
-from src.lists.all_lists import ScrollAllLists
 from src.top.config_top_lvl_pages import *
 from src.load.save_and_load_data import SaveAndLoadData as sld
 from src.templates.templates import Templates
@@ -108,7 +107,7 @@ class EditNameShoppingList(AddNewCategory):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
     """
-    def __init__(self, main_window: any, scroll_all_lists: ScrollAllLists, *args, **kwargs):
+    def __init__(self, main_window: any, scroll_all_lists: any, *args, **kwargs):
         super().__init__(main_window, *args, **kwargs)
         self.__main_window = main_window
         self.__scroll_all_lists = scroll_all_lists
