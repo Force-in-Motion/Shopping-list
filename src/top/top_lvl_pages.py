@@ -479,3 +479,13 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
         """
         self.__scroll_view_list_history = ctk.CTkScrollableFrame(self, width=wh_solf, height=ht_solf, fg_color=fgc_solf, corner_radius=cr_solf)
         self.__scroll_view_list_history.place(relx=0.05, rely=0.05)
+
+
+    def __config_cancel_button(self) -> None:
+        """
+        Формирует параметры и стили кнопки закрытия окна
+        """
+        self.__close_btn = ctk.CTkButton(self, width=wh_cbtn, height=ht_cbtn, text=tt_cbtn, fg_color=fgc_cbtn,
+                                         text_color=tc_cbtn, border_width=bw_cbtn, hover_color=hc_cbtn, font=ft_cbtn)
+        self.__close_btn.place(relx=0.39, rely=0.83)
+        self.__close_btn.configure(command=self.cancel_button_click_handler)
