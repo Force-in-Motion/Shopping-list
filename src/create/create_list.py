@@ -125,6 +125,7 @@ class ScrollCreateList(ctk.CTkScrollableFrame):
     count_checkboxes = property(__get_count_checkboxes)
 
 
+
 class ConfigCreateList(ctk.CTkFrame):
     """
     Класс- контейнер для виджетов, которые формируют конфигурацию и составляющие списка покупок,
@@ -254,6 +255,7 @@ class MenuButtonsCreateList(ctk.CTkFrame):
         self.__main_window = main_window
 
         self.__config_menu_buttons()
+
 
     def __config_menu_buttons(self) -> None:
         """
@@ -419,7 +421,7 @@ class CreateList(ctk.CTkToplevel):
 
     def del_target_condition(self) -> None:
         """
-        Внутри себя вызывает другую функцию, при помощи которой, получает список текстов активных чекбоксов
+        При помощи метода create_list_text_select_checkbox получает список текстов активных чекбоксов
         Каждый элемент списка сплитуется по запятым и на следующем этапе цикла формируется новая матрица self.__list_products на основе старой
         Но уже с теми элементами, которые не равны тем, что находятся в списке активных чекбоксов
         """
