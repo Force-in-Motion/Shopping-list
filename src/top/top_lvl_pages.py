@@ -463,3 +463,11 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
         self.__config_scroll_frame()
         self.__config_cancel_button()
         self.__load_checkbox_products()
+
+
+    def __config_window(self) -> None:
+        """
+        Формирует параметры и стили главного окна приложения
+        """
+        self.title(ttl_olph)
+        self.geometry(gt_olph)
