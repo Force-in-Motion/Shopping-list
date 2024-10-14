@@ -89,3 +89,12 @@ class AddNewCategory(ctk.CTkToplevel):
         self.__main_window.deiconify()
 
         self.destroy()
+
+
+    def __get_input_field_data(self) -> str:
+        """
+        Возвращает данные из поля ввода пользователя
+        """
+        return self.__input_field.get()
+
+    input_data = property(__get_input_field_data)
