@@ -71,3 +71,13 @@ class SaveAndLoadData:
         with open(path_dir + r'\shopping_lists.json', 'w') as f:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
+
+
+    @staticmethod
+    def read_data_with_favorites_products() -> dict:
+        """
+        Считывает и возвращает данные из файла favorites_products.json
+        """
+        with open(path_dir + r'\favorites_products.json', 'r') as f:
+            load_data = json.load(f)
+            return load_data
