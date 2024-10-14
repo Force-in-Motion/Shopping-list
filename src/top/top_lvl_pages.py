@@ -98,3 +98,15 @@ class AddNewCategory(ctk.CTkToplevel):
         return self.__input_field.get()
 
     input_data = property(__get_input_field_data)
+
+
+class EditNameShoppingList(AddNewCategory):
+    """
+    Класс, описывающий функционал окна верхнего уровня и его виджеты
+    """
+    def __init__(self, main_window, scroll_all_lists, *args, **kwargs):
+        super().__init__(main_window, *args, **kwargs)
+        self.__main_window = main_window
+        self.__scroll_all_lists = scroll_all_lists
+
+        self.title(ttl_ensl)
