@@ -120,3 +120,11 @@ class MainPage(ctk.CTk):
         self.__all_lists_page = AllLists(self)
 
         self.withdraw()
+
+    def favorites_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке "избранное"
+        """
+        self.__favorite_products_page = FavoriteProducts(self)
+
+        self.withdraw()
