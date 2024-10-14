@@ -264,3 +264,9 @@ class EditProduct(ctk.CTkToplevel):
         Возвращает текущее значение поля ввода имени товара
         """
         return self.__name_product.get()
+
+    def __get_count_product(self) -> int:
+        """
+        Возвращает количество товара
+        """
+        return self.__count_product.get()
