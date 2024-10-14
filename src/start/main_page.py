@@ -1,13 +1,12 @@
-import customtkinter as ctk
-from PIL import Image
-import sys
-
 from src.start.config_main_page import *
 from src.lists.all_lists import *
 from src.create.create_list import *
 from src.favorite.favorite_product import *
 from src.history.purchase_history import *
 from src.open.open_list import *
+import customtkinter as ctk
+from PIL import Image
+import sys
 
 
 class MainFrame(ctk.CTkFrame):
@@ -21,6 +20,7 @@ class MainFrame(ctk.CTkFrame):
         self.__config_logo()
         self.__config_menu_buttons()
         self.__config_exit_button()
+
 
     def __config_menu_buttons(self) -> None:
         """
@@ -47,7 +47,6 @@ class MainFrame(ctk.CTkFrame):
         self.__history.configure(command=self.__main_window.history_button_click_handler)
 
 
-
     def __config_exit_button(self) -> None:
         """
         Формирует в себе кнопку, отвечающую за выход из приложения и устанавливает ее в указанное место окна, а так же устанавливает его параметры и стили
@@ -56,6 +55,7 @@ class MainFrame(ctk.CTkFrame):
         self.__exit.place(relx=0.38, rely=0.85)
         self.__exit.configure(command=sys.exit)
 
+
     def __config_logo(self) -> None:
         """
         Устанавливает логотип приложения в указанное место окна, а так же устанавливает его параметры и стили
@@ -63,11 +63,6 @@ class MainFrame(ctk.CTkFrame):
         self.__logo = ctk.CTkImage(light_image=Image.open(path_logo), size=size)
         self.__image_label = ctk.CTkLabel(self, image=self.__logo, text=l_tt)
         self.__image_label.place(relx=0.7, rely=0.1)
-
-
-
-
-
 
 
 
@@ -96,6 +91,7 @@ class MainPage(ctk.CTk):
         self.geometry(gmt)
         self.resizable(rsb_wh, rsb_ht)
 
+
     def __config_main_frame(self):
         """
         Формирует основной контейнер (фрейм) содержащий остальные виджеты страницы
@@ -113,6 +109,7 @@ class MainPage(ctk.CTk):
 
         self.withdraw()
 
+
     def all_lists_button_click_handler(self) -> None:
         """
         Обрабатывает клик по кнопке "мои списки"
@@ -120,6 +117,7 @@ class MainPage(ctk.CTk):
         self.__all_lists_page = AllLists(self)
 
         self.withdraw()
+
 
     def favorites_button_click_handler(self) -> None:
         """
@@ -129,6 +127,7 @@ class MainPage(ctk.CTk):
 
         self.withdraw()
 
+
     def history_button_click_handler(self) -> None:
         """
         Обрабатывает клик по кнопке "история покупок"
@@ -137,6 +136,7 @@ class MainPage(ctk.CTk):
 
         self.withdraw()
 
+
     def run_program(self) -> None:
         """
         Запускает главное окно приложения
@@ -144,3 +144,4 @@ class MainPage(ctk.CTk):
         self.lift()
         self.attributes('-topmost', True)
         self.mainloop()
+
