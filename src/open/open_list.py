@@ -25,3 +25,19 @@ class ScrollOpenListProducts(ctk.CTkScrollableFrame):
         self.__list_name = None
 
         self.__load_checkbox_products()
+
+
+
+class MenuButtonsOpenList(ctk.CTkFrame):
+    """
+    Класс- контейнер, формирует область с кнопками, отвечающими за функционал страницы
+    """
+
+    def __init__(self, main_window: OpenList, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__main_window = main_window
+        self.__label_add_product = None
+
+        self.__config_menu_buttons()
+        self.__config_label_add_product_in_list()
+        self.__config_label_add_product_in_favorite()
