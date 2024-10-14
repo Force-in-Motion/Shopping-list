@@ -72,6 +72,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
         return list_select_checkboxes
 
+
     def create_list_text_select_checkbox(self) -> list[str]:
         """
         Обходит список чекбоксов скролл фрейма и формирует новый список из текста только активных чекбоксов
