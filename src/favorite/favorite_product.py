@@ -139,12 +139,14 @@ class MenuButtonsFavoriteProducts(ctk.CTkFrame):
         self.__config_label_add_product()
         self.__config_menu_buttons()
 
+
     def __config_label_add_product(self) -> None:
         """
         Формирует в себе текст, описывающий функционал кнопки добавления нового товара
         """
         self.__label_add_list = ctk.CTkLabel(self, text_color=tc_all, text=tt_all, font=ft_all)
         self.__label_add_list.place(relx=0.1, rely=0.14)
+
 
     def __config_menu_buttons(self) -> None:
         """
