@@ -270,3 +270,14 @@ class EditProduct(ctk.CTkToplevel):
         Возвращает количество товара
         """
         return self.__count_product.get()
+
+    def __get_category_product(self) -> str:
+        """
+        Возвращает, введенную пользователем, категорию
+        """
+        return self.__category_product.get()
+
+
+    name_product = property(__get_name_product)
+    count_product = property(__get_count_product)
+    category = property(__get_category_product)
