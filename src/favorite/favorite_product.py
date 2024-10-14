@@ -209,6 +209,7 @@ class FavoriteProducts(ctk.CTkToplevel):
         self.title(ttl)
         self.geometry(gt)
 
+
     def __config_logo(self) -> None:
         """
         Формирует параметры и стили главного логотипа приложения
@@ -216,6 +217,7 @@ class FavoriteProducts(ctk.CTkToplevel):
         self.__logo = ctk.CTkImage(light_image=Image.open(path_logo), size=size_l)
         self.__image_label = ctk.CTkLabel(self, image=self.__logo, text=tt_l)
         self.__image_label.place(relx=0.69, rely=0.05)
+
 
     def __config_scroll_frame(self) -> None:
         """
