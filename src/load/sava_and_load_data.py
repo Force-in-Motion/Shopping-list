@@ -50,3 +50,13 @@ class SaveAndLoadData:
             return True
         else:
             return False
+
+
+    @staticmethod
+    def read_data_with_shopping_lists() -> dict:
+        """
+        Считывает и возвращает данные из файла shopping_lists.json
+        """
+        with open(path_dir + r'\shopping_lists.json', 'r') as f:
+            load_data = json.load(f)
+            return load_data
