@@ -109,8 +109,10 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
         for checkbox in self.__list_checkboxes:
             checkbox.deselect()
 
+
     def __get_list_checkboxes(self) -> list[ctk.CTkCheckBox]:
         return self.__list_checkboxes
+
 
     def __get_count_checkboxes(self):
         """
@@ -120,6 +122,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
     list_checkboxes = property(__get_list_checkboxes)
     count_checkboxes = property(__get_count_checkboxes)
+
 
 
 class MenuButtonsFavoriteProducts(ctk.CTkFrame):
