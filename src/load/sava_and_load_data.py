@@ -102,3 +102,14 @@ class SaveAndLoadData:
         with open(path_dir + r'\purchase_history.json', 'r') as f:
             load_data = json.load(f)
             return load_data
+
+
+    @staticmethod
+    def write_data_in_purchase_history(load_data) -> bool:
+        """
+        Записывает полученные данные в файл purchase_history.json
+        Возвращает True
+        """
+        with open(path_dir + r'\purchase_history.json', 'w') as f:
+            json.dump(load_data, f, ensure_ascii=False, indent=4)
+            return True
