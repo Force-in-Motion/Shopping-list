@@ -1,11 +1,9 @@
 import customtkinter as ctk
 from PIL import Image
-from tkinter.messagebox import showerror
-
-from src.top.config_top_level_pages import *
+from src.top.config_top_lvl_pages import *
 from src.load.save_and_load_data import SaveAndLoadData as sld
+from tkinter.messagebox import showerror
 from src.templates.templates import Templates
-
 
 
 class AddNewCategory(ctk.CTkToplevel):
@@ -52,6 +50,7 @@ class AddNewCategory(ctk.CTkToplevel):
         self.__image_label = ctk.CTkLabel(self, image=self.__logo, text=tt_l)
         self.__image_label.place(relx=0.67, rely=0.1)
 
+
     def __config_menu_buttons(self) -> None:
         """
         Формирует в себе кнопки, отвечающие за общий функционал страницы, а так же устанавливает его параметры и стили
@@ -65,6 +64,7 @@ class AddNewCategory(ctk.CTkToplevel):
                                           text_color=tc_cb, border_width=bw_cb, hover_color=hc_cb, font=ft_cb)
         self.__cancel_btn.configure(command=self.cancel_button_click_handler)
         self.__cancel_btn.place(relx=0.62, rely=0.7)
+
 
     def save_button_click_handler(self) -> None:
         """
@@ -81,6 +81,7 @@ class AddNewCategory(ctk.CTkToplevel):
         self.__main_window.data_create_list.category.configure(values=self.__list_categories.get("cs"))
 
         self.destroy()
+
 
     def cancel_button_click_handler(self) -> None:
         """
@@ -100,6 +101,7 @@ class AddNewCategory(ctk.CTkToplevel):
     input_data = property(__get_input_field_data)
 
 
+
 class EditNameShoppingList(AddNewCategory):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
@@ -110,6 +112,7 @@ class EditNameShoppingList(AddNewCategory):
         self.__scroll_all_lists = scroll_all_lists
 
         self.title(ttl_ensl)
+
 
     def save_button_click_handler(self) -> None:
         """
@@ -131,6 +134,7 @@ class EditNameShoppingList(AddNewCategory):
         self.__main_window.deiconify()
 
         self.destroy()
+
 
     def cancel_button_click_handler(self) -> None:
         """
@@ -164,12 +168,14 @@ class EditProduct(ctk.CTkToplevel):
         self.__config_menu_buttons()
         self.__config_category_list()
 
+
     def __config_window(self) -> None:
         """
         Формирует параметры и стили главного окна приложения
         """
         self.geometry(gt_cw_ap)
         self.title(ttl_cw_ap)
+
 
     def __config_input_fields(self) -> None:
         """
@@ -183,6 +189,7 @@ class EditProduct(ctk.CTkToplevel):
                                           width=wh_cp, height=ht_cp, fg_color=fgc_cp, font=ft_cp, text_color=tc_cp)
         self.__count_product.place(relx=0.373, rely=0.2)
 
+
     def __config_category_list(self) -> None:
         """
         Формирует в себе список, доступных по умолчанию, категорий товара
@@ -192,6 +199,7 @@ class EditProduct(ctk.CTkToplevel):
                                         state=st_c, button_color=bc_c)
         self.__category_product.configure(values=self.__list_categories.get("cs"))
         self.__category_product.place(relx=0.52, rely=0.2)
+
 
     def __config_logo(self) -> None:
         """
@@ -231,7 +239,6 @@ class EditProduct(ctk.CTkToplevel):
 
         self.__scroll_frame.set_new_text_for_checkbox(check_box, new_text)
 
-
     def save_button_click_handler(self) -> None:
         """
         Обрабатывает клик по кнопке сохранения списка покупок
@@ -259,17 +266,20 @@ class EditProduct(ctk.CTkToplevel):
 
         self.destroy()
 
+
     def __get_name_product(self) -> str:
         """
         Возвращает текущее значение поля ввода имени товара
         """
         return self.__name_product.get()
 
+
     def __get_count_product(self) -> int:
         """
         Возвращает количество товара
         """
         return self.__count_product.get()
+
 
     def __get_category_product(self) -> str:
         """
@@ -281,6 +291,7 @@ class EditProduct(ctk.CTkToplevel):
     name_product = property(__get_name_product)
     count_product = property(__get_count_product)
     category = property(__get_category_product)
+
 
 
 class AddProduct(EditProduct):
@@ -406,6 +417,7 @@ class ConfirmationPage(ctk.CTkToplevel):
         self.destroy()
 
 
+
 class ConfirmationClearScrollPlace(ConfirmationPage):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
@@ -480,7 +492,6 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
         self.__scroll_view_list_history = ctk.CTkScrollableFrame(self, width=wh_solf, height=ht_solf, fg_color=fgc_solf, corner_radius=cr_solf)
         self.__scroll_view_list_history.place(relx=0.05, rely=0.05)
 
-
     def __config_cancel_button(self) -> None:
         """
         Формирует параметры и стили кнопки закрытия окна
@@ -489,7 +500,6 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
                                          text_color=tc_cbtn, border_width=bw_cbtn, hover_color=hc_cbtn, font=ft_cbtn)
         self.__close_btn.place(relx=0.39, rely=0.83)
         self.__close_btn.configure(command=self.cancel_button_click_handler)
-
 
     def __load_checkbox_products(self) -> None:
         """
@@ -505,7 +515,6 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
 
             product = ctk.CTkLabel(master=self.__scroll_view_list_history, text=f'{', '.join(elem)}', font=ft_p, fg_color=fgc_p)
             product.grid(sticky="w", padx=(10, 0), pady=10)
-
 
     def cancel_button_click_handler(self) -> None:
         """
