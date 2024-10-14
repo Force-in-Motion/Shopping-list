@@ -281,3 +281,14 @@ class EditProduct(ctk.CTkToplevel):
     name_product = property(__get_name_product)
     count_product = property(__get_count_product)
     category = property(__get_category_product)
+
+
+class AddProduct(EditProduct):
+    """
+    Класс, описывающий функционал окна верхнего уровня и его виджеты
+    """
+    def __init__(self, main_window, scroll_frame, *args, **kwargs):
+        super().__init__(main_window, scroll_frame, *args, **kwargs)
+
+        self.__main_window = main_window
+        self.__scroll_frame = scroll_frame
