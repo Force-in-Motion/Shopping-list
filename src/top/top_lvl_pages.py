@@ -395,3 +395,12 @@ class ConfirmationPage(ctk.CTkToplevel):
         self.destroy()
 
 
+    def cancel_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке возврата на предыдущую страницу
+        """
+        self.__scroll_frame.reset_checkboxes()
+
+        self.__main_window.deiconify()
+
+        self.destroy()
