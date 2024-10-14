@@ -357,3 +357,11 @@ class ConfirmationPage(ctk.CTkToplevel):
         """
         self.title(ttl_cp)
         self.geometry(gt_cp)
+
+
+    def __config_label_confirm(self) -> None:
+        """
+        Формирует в себе текст, описывающий назначение окна
+        """
+        self.__label_confirm = ctk.CTkLabel(self, width=wh_cl, height=ht_cl, text=tt_cl, text_color=tc_cl, font=ft_cl)
+        self.__label_confirm.place(relx=0.3, rely=0.1)
