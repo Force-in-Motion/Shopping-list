@@ -365,3 +365,18 @@ class ConfirmationPage(ctk.CTkToplevel):
         """
         self.__label_confirm = ctk.CTkLabel(self, width=wh_cl, height=ht_cl, text=tt_cl, text_color=tc_cl, font=ft_cl)
         self.__label_confirm.place(relx=0.3, rely=0.1)
+
+
+    def __config_menu_buttons(self) -> None:
+        """
+        Формирует в себе кнопки, отвечающие за общий функционал страницы, а так же устанавливает его параметры и стили
+        """
+        self.__confirm_btn = ctk.CTkButton(self, width=wh_cmb, height=ht_cmb, text=tt_cmb, fg_color=fgc_cmb,
+                                         text_color=tc_cmb, border_width=bw_cmb, hover_color=hc_cmb, font=ft_cmb)
+        self.__confirm_btn.configure(command=self.confirm_button_click_handler)
+        self.__confirm_btn.place(relx=0.05, rely=0.6)
+
+        self.__cancel_btn = ctk.CTkButton(self, text=tt_clb, width=wh_clb, fg_color=fgc_clb, height=ht_clb,
+                                              text_color=tc_clb, border_width=bw_clb, hover_color=hc_clb, font=ft_clb)
+        self.__cancel_btn.configure(command=self.cancel_button_click_handler)
+        self.__cancel_btn.place(relx=0.64, rely=0.6)
