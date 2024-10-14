@@ -65,3 +65,19 @@ class AddNewCategory(ctk.CTkToplevel):
                                           text_color=tc_cb, border_width=bw_cb, hover_color=hc_cb, font=ft_cb)
         self.__cancel_btn.configure(command=self.cancel_button_click_handler)
         self.__cancel_btn.place(relx=0.62, rely=0.7)
+
+    def save_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке сохранения списка покупок
+        """
+        assert self.input_data != '', showerror('Ошибка', 'Пустая строка не может быть принята')
+
+        self.__list_categories["cs"].append(self.input_data)
+
+        sld.write_categories(self.__list_categories)
+
+        self.__main_window.deiconify()
+
+        self.__main_window.data_create_list.category.configure(values=self.__list_categories.get("cs"))
+
+        self.destroy()
