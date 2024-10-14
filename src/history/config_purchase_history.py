@@ -85,3 +85,19 @@ path_reset_button = r'Images\reset.png'
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
