@@ -48,7 +48,13 @@ class MainFrame(ctk.CTkFrame):
 
 
 
-
+    def __config_exit_button(self) -> None:
+        """
+        Формирует в себе кнопку, отвечающую за выход из приложения и устанавливает ее в указанное место окна, а так же устанавливает его параметры и стили
+        """
+        self.__exit = ctk.CTkButton(self, text=e_tt, width=wh_e, height=ht_e, fg_color=fgc_e, hover_color=hc_e, text_color=tc_e, font=ft_e)
+        self.__exit.place(relx=0.38, rely=0.85)
+        self.__exit.configure(command=sys.exit)
 
 
 
