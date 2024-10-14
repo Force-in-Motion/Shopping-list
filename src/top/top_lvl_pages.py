@@ -163,3 +163,10 @@ class EditProduct(ctk.CTkToplevel):
         self.__config_input_fields()
         self.__config_menu_buttons()
         self.__config_category_list()
+
+    def __config_window(self) -> None:
+        """
+        Формирует параметры и стили главного окна приложения
+        """
+        self.geometry(gt_cw_ap)
+        self.title(ttl_cw_ap)
