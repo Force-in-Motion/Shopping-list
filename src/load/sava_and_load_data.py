@@ -2,6 +2,7 @@ import json
 import os
 import os.path
 
+
 class SaveAndLoadData:
 
     @staticmethod
@@ -124,18 +125,22 @@ class SaveAndLoadData:
             load_data = json.load(f)
             return load_data
 
-        @staticmethod
-        def write_categories(load_data) -> bool:
-            """
-            Записывает полученные данные в файл categories.json
-            Возвращает True
-            """
-            with open(path_categories, 'w') as f:
-                json.dump(load_data, f, ensure_ascii=False, indent=4)
-                return True
 
-    path_dir = os.environ.get('LOCALAPPDATA') + r'\Shopping list data'
+    @staticmethod
+    def write_categories(load_data) -> bool:
+        """
+        Записывает полученные данные в файл categories.json
+        Возвращает True
+        """
+        with open(path_categories, 'w') as f:
+            json.dump(load_data, f, ensure_ascii=False, indent=4)
+            return True
 
-    path_categories = r'src\categories\categories.json'
 
-    path_csv = os.path.expanduser('~') + r'\Desktop'
+path_dir = os.environ.get('LOCALAPPDATA') + r'\Shopping list data'
+
+path_categories = r'src\categories\categories.json'
+
+path_csv = os.path.expanduser('~') + r'\Desktop'
+
+
