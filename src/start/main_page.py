@@ -56,7 +56,13 @@ class MainFrame(ctk.CTkFrame):
         self.__exit.place(relx=0.38, rely=0.85)
         self.__exit.configure(command=sys.exit)
 
-
+    def __config_logo(self) -> None:
+        """
+        Устанавливает логотип приложения в указанное место окна, а так же устанавливает его параметры и стили
+        """
+        self.__logo = ctk.CTkImage(light_image=Image.open(path_logo), size=size)
+        self.__image_label = ctk.CTkLabel(self, image=self.__logo, text=l_tt)
+        self.__image_label.place(relx=0.7, rely=0.1)
 
 
 
