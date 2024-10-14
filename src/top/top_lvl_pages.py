@@ -81,3 +81,11 @@ class AddNewCategory(ctk.CTkToplevel):
         self.__main_window.data_create_list.category.configure(values=self.__list_categories.get("cs"))
 
         self.destroy()
+
+    def cancel_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке возврата на предыдущую страницу
+        """
+        self.__main_window.deiconify()
+
+        self.destroy()
