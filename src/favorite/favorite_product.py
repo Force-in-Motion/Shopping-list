@@ -24,9 +24,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
     def __load_checkbox_products(self) -> None:
         """
-        Внутри себя вызывает другую функцию, при помощи которой, получает текст нажатого чекбокса и ссылку на него
-        Сравнивает полученные данные через цикл с загруженными данными из файла, таким образом находит, отмеченный чекбоксом, список
-        И загружает в скролл фрейм все продукты этого списка в виде чекбоксов
+        Загружает в скролл фрейм все продукты этого списка в виде чекбоксов
         """
         for elem in self.__main_window.load_data_favorites["f"]:
             self.__main_window.list_products.append(elem)
@@ -53,7 +51,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
     def check_selected_checkbox(self) -> bool:
         """
-        Обходит список чекбоксов, определяет активный чекбокс если такой имеется вернет return,
+        Обходит список чекбоксов, определяет активный чекбокс если такой имеется вернет True,
         Если в списке нет активных чекбоксов то возвращает False
         """
         for checkbox in self.__list_checkboxes:
