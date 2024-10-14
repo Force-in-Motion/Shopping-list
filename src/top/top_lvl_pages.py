@@ -505,3 +505,14 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
 
             product = ctk.CTkLabel(master=self.__scroll_view_list_history, text=f'{', '.join(elem)}', font=ft_p, fg_color=fgc_p)
             product.grid(sticky="w", padx=(10, 0), pady=10)
+
+
+    def cancel_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке закрытия окна
+        """
+        self.__scroll_frame.reset_checkboxes()
+
+        self.__main_window.deiconify()
+
+        self.destroy()
