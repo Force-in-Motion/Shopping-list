@@ -81,3 +81,14 @@ class SaveAndLoadData:
         with open(path_dir + r'\favorites_products.json', 'r') as f:
             load_data = json.load(f)
             return load_data
+
+
+    @staticmethod
+    def write_data_in_favorites_products(load_data) -> bool:
+        """
+        Записывает полученные данные в файл favorites_products.json
+        Возвращает True
+        """
+        with open(path_dir + r'\favorites_products.json', 'w') as f:
+            json.dump(load_data, f, ensure_ascii=False, indent=4)
+            return True
