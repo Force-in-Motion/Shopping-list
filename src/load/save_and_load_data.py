@@ -58,7 +58,7 @@ class SaveAndLoadData:
         """
         Считывает и возвращает данные из файла shopping_lists.json
         """
-        with open(path_dir + r'\shopping_lists.json', 'r') as f:
+        with open(path_dir + r'\shopping_lists.json', 'r', encoding='utf-8') as f:
             load_data = json.load(f)
             return load_data
 
@@ -69,7 +69,7 @@ class SaveAndLoadData:
         Записывает полученные данные в файл shopping_lists.json
         Возвращает True
         """
-        with open(path_dir + r'\shopping_lists.json', 'w') as f:
+        with open(path_dir + r'\shopping_lists.json', 'w', encoding='utf-8') as f:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
 
@@ -79,7 +79,7 @@ class SaveAndLoadData:
         """
         Считывает и возвращает данные из файла favorites_products.json
         """
-        with open(path_dir + r'\favorites_products.json', 'r') as f:
+        with open(path_dir + r'\favorites_products.json', 'r', encoding='utf-8') as f:
             load_data = json.load(f)
             return load_data
 
@@ -90,7 +90,7 @@ class SaveAndLoadData:
         Записывает полученные данные в файл favorites_products.json
         Возвращает True
         """
-        with open(path_dir + r'\favorites_products.json', 'w') as f:
+        with open(path_dir + r'\favorites_products.json', 'w', encoding='utf-8') as f:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
 
@@ -100,7 +100,7 @@ class SaveAndLoadData:
         """
         Считывает и возвращает данные из файла purchase_history.json
         """
-        with open(path_dir + r'\purchase_history.json', 'r') as f:
+        with open(path_dir + r'\purchase_history.json', 'r', encoding='utf-8') as f:
             load_data = json.load(f)
             return load_data
 
@@ -111,7 +111,7 @@ class SaveAndLoadData:
         Записывает полученные данные в файл purchase_history.json
         Возвращает True
         """
-        with open(path_dir + r'\purchase_history.json', 'w') as f:
+        with open(path_dir + r'\purchase_history.json', 'w', encoding='utf-8') as f:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
 
@@ -121,7 +121,7 @@ class SaveAndLoadData:
         """
         Считывает и возвращает данные из файла categories.json
         """
-        with open(path_categories, 'r') as f:
+        with open(path_categories, 'r', encoding='utf-8') as f:
             load_data = json.load(f)
             return load_data
 
@@ -132,7 +132,7 @@ class SaveAndLoadData:
         Записывает полученные данные в файл categories.json
         Возвращает True
         """
-        with open(path_categories, 'w') as f:
+        with open(path_categories, 'w', encoding='utf-8') as f:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
 
