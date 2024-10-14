@@ -1,7 +1,8 @@
 from __future__ import annotations
-from tkinter.messagebox import showerror, showinfo
+
 import customtkinter as ctk
 from PIL import Image
+from tkinter.messagebox import showerror, showinfo
 
 from src.history.config_purchase_history import *
 from src.top.top_lvl_pages import ConfirmationClearScrollPlace, ConfirmationPage, ViewListPurchaseHistory

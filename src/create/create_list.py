@@ -1,8 +1,9 @@
 from __future__ import annotations
-from tkinter import END
-from PIL import Image
+
 import customtkinter as ctk
 from tkinter.messagebox import showerror
+from tkinter import END
+from PIL import Image
 
 from src.create.config_create_list import *
 from src.load.save_and_load_data import SaveAndLoadData as sld

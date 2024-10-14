@@ -1,9 +1,10 @@
 from __future__ import annotations
 
-from tkinter.messagebox import showerror
-
 import customtkinter as ctk
 from PIL import Image
+
+from tkinter.messagebox import showerror
+
 
 from src.favorite.config_favorite_product import *
 from src.load.sava_and_load_data import SaveAndLoadData as sld
