@@ -128,3 +128,11 @@ class MainPage(ctk.CTk):
         self.__favorite_products_page = FavoriteProducts(self)
 
         self.withdraw()
+
+    def history_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке "история покупок"
+        """
+        self.__history_page = PurchaseHistory(self)
+
+        self.withdraw()
