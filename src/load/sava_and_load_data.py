@@ -113,3 +113,13 @@ class SaveAndLoadData:
         with open(path_dir + r'\purchase_history.json', 'w') as f:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
+
+
+    @staticmethod
+    def read_categories() -> dict:
+        """
+        Считывает и возвращает данные из файла categories.json
+        """
+        with open(path_categories, 'r') as f:
+            load_data = json.load(f)
+            return load_data
