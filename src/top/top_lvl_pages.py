@@ -489,3 +489,19 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
                                          text_color=tc_cbtn, border_width=bw_cbtn, hover_color=hc_cbtn, font=ft_cbtn)
         self.__close_btn.place(relx=0.39, rely=0.83)
         self.__close_btn.configure(command=self.cancel_button_click_handler)
+
+
+    def __load_checkbox_products(self) -> None:
+        """
+        Внутри себя вызывает другую функцию, при помощи которой, получает текст нажатого чекбокса и ссылку на него
+        Сравнивает полученные данные через цикл с загруженными данными из файла, таким образом находит, отмеченный чекбоксом, список
+        И загружает в скролл фрейм все продукты этого списка в виде чекбоксов
+        """
+        text, checkbox = self.__scroll_frame.get_selected_checkbox()
+
+        self.__list_name = text
+
+        for elem in self.__load_purchase_history[text]:
+
+            product = ctk.CTkLabel(master=self.__scroll_view_list_history, text=f'{', '.join(elem)}', font=ft_p, fg_color=fgc_p)
+            product.grid(sticky="w", padx=(10, 0), pady=10)
