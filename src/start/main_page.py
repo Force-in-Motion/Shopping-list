@@ -112,3 +112,11 @@ class MainPage(ctk.CTk):
         self.__add_list_page = CreateList(self)
 
         self.withdraw()
+
+    def all_lists_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке "мои списки"
+        """
+        self.__all_lists_page = AllLists(self)
+
+        self.withdraw()
