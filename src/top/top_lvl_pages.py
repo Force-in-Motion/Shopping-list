@@ -42,3 +42,12 @@ class AddNewCategory(ctk.CTkToplevel):
         self.__input_field = ctk.CTkEntry(self, placeholder_text=pht_if, placeholder_text_color=phtc_if,
                                           width=wh_if, height=ht_if, fg_color=fgc_if, font=ft_if, text_color=tc_nsl)
         self.__input_field.place(relx=0.05, rely=0.2)
+
+
+    def __config_logo(self) -> None:
+        """
+        Формирует параметры и стили главного логотипа приложения
+        """
+        self.__logo = ctk.CTkImage(light_image=Image.open(path_logo), size=size_ltl)
+        self.__image_label = ctk.CTkLabel(self, image=self.__logo, text=tt_l)
+        self.__image_label.place(relx=0.67, rely=0.1)
