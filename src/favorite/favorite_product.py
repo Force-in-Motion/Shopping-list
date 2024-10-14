@@ -82,6 +82,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
         return list_select_texts
 
+
     def delete_checkbox(self) -> None:
         """
         Путем вызова другого метода получает список активных чекбоксов
