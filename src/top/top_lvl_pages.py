@@ -170,3 +170,15 @@ class EditProduct(ctk.CTkToplevel):
         """
         self.geometry(gt_cw_ap)
         self.title(ttl_cw_ap)
+
+    def __config_input_fields(self) -> None:
+        """
+        Формирует в себе поля ввода данных пользователя
+        """
+        self.__name_product = ctk.CTkEntry(self, placeholder_text=pht_np, placeholder_text_color=phtc_np,
+                                         width=wh_np, height=ht_np, fg_color=fgc_np, font=ft_np, text_color=tc_np)
+        self.__name_product.place(relx=0.04, rely=0.2)
+
+        self.__count_product = ctk.CTkEntry(self, placeholder_text=pht_cp, placeholder_text_color=phtc_cp,
+                                          width=wh_cp, height=ht_cp, fg_color=fgc_cp, font=ft_cp, text_color=tc_cp)
+        self.__count_product.place(relx=0.373, rely=0.2)
