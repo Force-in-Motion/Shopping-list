@@ -227,6 +227,7 @@ class FavoriteProducts(ctk.CTkToplevel):
                                                         corner_radius=cr_sp)
         self.__scroll_favorite.place(relx=0.04, rely=0.05)
 
+
     def __config_menu_buttons(self) -> None:
         """
         Формирует параметры и стили контейнера кнопок
@@ -235,6 +236,7 @@ class FavoriteProducts(ctk.CTkToplevel):
                                                                fg_color=fgc_bm, corner_radius=cr_bm)
         self.__menu_btn_favorite.place(relx=0, rely=0.6)
 
+
     def add_button_click_handler(self):
         """
         Обрабатывает клик по кнопке добавления товара
@@ -242,6 +244,7 @@ class FavoriteProducts(ctk.CTkToplevel):
         self.__add_product_page = AddProduct(self, self.__scroll_favorite)
 
         self.__add_product_page.grab_set()
+
 
     def del_target_condition(self) -> None:
         """
@@ -255,6 +258,7 @@ class FavoriteProducts(ctk.CTkToplevel):
         self.__load_data_favorites["f"] = self.__list_products
 
         sld.write_data_in_favorites_products(self.__load_data_favorites)
+
 
     def del_button_click_handler(self) -> None:
         """
@@ -270,6 +274,7 @@ class FavoriteProducts(ctk.CTkToplevel):
 
         self.__confirmation_request_page.grab_set()
 
+
     def clear_button_click_handler(self) -> None:
         """
         Обрабатывает клик по кнопке удаления всего товара в избранном
@@ -280,6 +285,7 @@ class FavoriteProducts(ctk.CTkToplevel):
 
         self.__confirmation_clear_favorite_page.grab_set()
 
+
     def cancel_button_click_handler(self) -> None:
         """
         Обрабатывает клик по кнопке возврата в предыдущее меню
@@ -288,11 +294,13 @@ class FavoriteProducts(ctk.CTkToplevel):
 
         self.destroy()
 
+
     def __get_scroll_favorite(self) -> ScrollFavoriteProducts:
         """
         Возвращает объект класса ScrollFavoriteProducts
         """
         return self.__scroll_favorite
+
 
     def __get_load_data_favorites(self) -> dict:
         """
@@ -300,11 +308,13 @@ class FavoriteProducts(ctk.CTkToplevel):
         """
         return self.__load_data_favorites
 
+
     def __get_list_products(self) -> list[str]:
         """
         Возвращает список продуктов из избранного
         """
         return self.__list_products
+
 
     list_products = property(__get_list_products)
     load_data_favorites = property(__get_load_data_favorites)
