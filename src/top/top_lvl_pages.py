@@ -292,3 +292,44 @@ class AddProduct(EditProduct):
 
         self.__main_window = main_window
         self.__scroll_frame = scroll_frame
+
+
+    def save_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке сохранения списка покупок
+        """
+        from src.favorite.favorite_product import FavoriteProducts
+
+        assert self.name_product != '' and self.count_product != '' and self.category != '', showerror('Ошибка', 'Заполните все поля')
+
+        assert self.count_product.isdigit(), showerror('Ошибка', 'Количество товара может быть только целым числом')
+
+        if Templates.checks_presence_element(self.name_product, self.__main_window.list_products):
+            showerror('Ошибка', 'Такой продукт уже есть в списке')
+            return
+
+        self.__scroll_frame.create_checkbox(self.name_product, self.count_product, self.category)
+
+        product = [self.name_product, self.count_product, self.category]
+
+        if isinstance(self.__main_window, FavoriteProducts):
+
+            self.__main_window.load_data_favorites["f"].append(', '.join(product))
+
+            sld.write_data_in_favorites_products(self.__main_window.load_data_favorites)
+
+            self.__main_window.deiconify()
+
+            self.destroy()
+
+            return
+
+        self.__main_window.list_products.append(product)
+
+        self.__main_window.load_data[self.__scroll_frame.list_name] = self.__main_window.list_products
+
+        sld.write_data_in_shopping_lists(self.__main_window.load_data)
+
+        self.__main_window.deiconify()
+
+        self.destroy()
