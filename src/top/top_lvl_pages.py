@@ -110,3 +110,24 @@ class EditNameShoppingList(AddNewCategory):
         self.__scroll_all_lists = scroll_all_lists
 
         self.title(ttl_ensl)
+
+    def save_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке сохранения списка покупок
+        """
+        assert self.input_data != '', showerror('Ошибка', 'Пустая строка не может быть принята')
+
+        text, checkbox = self.__scroll_all_lists.get_selected_checkbox()
+
+        self.__scroll_all_lists.set_new_text_for_checkbox(checkbox, self.input_data)
+
+        if text in self.__main_window.load_data:
+            self.__main_window.load_data[self.input_data] = self.__main_window.load_data.pop(text)
+
+            sld.write_data_in_shopping_lists(self.__main_window.load_data)
+
+            self.__scroll_all_lists.reset_checkboxes()
+
+        self.__main_window.deiconify()
+
+        self.destroy()
