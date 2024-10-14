@@ -349,3 +349,11 @@ class ConfirmationPage(ctk.CTkToplevel):
         self.__config_window()
         self.__config_label_confirm()
         self.__config_menu_buttons()
+
+
+    def __config_window(self) -> None:
+        """
+        Формирует параметры и стили главного окна приложения
+        """
+        self.title(ttl_cp)
+        self.geometry(gt_cp)
