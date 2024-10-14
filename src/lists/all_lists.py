@@ -1,12 +1,14 @@
 from __future__ import annotations
+
+import customtkinter as ctk
+from PIL import Image
+from tkinter.messagebox import showerror
+
 from src.create.create_list import CreateList
 from src.open.open_list import OpenList
 from src.top.top_lvl_pages import ConfirmationPage, EditNameShoppingList
 from src.load.save_and_load_data import SaveAndLoadData as sld
-from tkinter.messagebox import showerror
 from src.lists.config_all_lists import *
-import customtkinter as ctk
-from PIL import Image
 
 
 class ScrollAllLists(ctk.CTkScrollableFrame):

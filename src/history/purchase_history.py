@@ -1,10 +1,12 @@
 from __future__ import annotations
+
+import customtkinter as ctk
+from PIL import Image
+from tkinter.messagebox import showerror, showinfo
+
 from src.history.config_purchase_history import *
 from src.top.top_lvl_pages import ConfirmationClearScrollPlace, ConfirmationPage, ViewListPurchaseHistory
 from src.load.save_and_load_data import SaveAndLoadData as sld
-from tkinter.messagebox import showerror, showinfo
-import customtkinter as ctk
-from PIL import Image
 
 
 class ScrollPurchaseHistory(ctk.CTkScrollableFrame):
@@ -18,6 +20,7 @@ class ScrollPurchaseHistory(ctk.CTkScrollableFrame):
         self.__list_checkboxes = []
 
         self.__load_checkbox_products()
+
 
     def __load_checkbox_products(self) -> None:
         """
@@ -211,6 +214,7 @@ class PurchaseHistory(ctk.CTkToplevel):
         self.__config_scroll_frame()
         self.__config_menu_buttons()
 
+
     def __config_window(self) -> None:
         """
         Формирует параметры и стили главного окна приложения
@@ -351,6 +355,7 @@ class PurchaseHistory(ctk.CTkToplevel):
         Возвращает данные из файла purchase_history.json
         """
         return self.__load_data
+
 
     load_data = property(__get_load_data)
     load_data_purchase_history = property(__get_load_data_purchase_history)

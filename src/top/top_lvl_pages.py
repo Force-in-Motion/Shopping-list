@@ -1,8 +1,10 @@
 import customtkinter as ctk
 from PIL import Image
+from tkinter.messagebox import showerror
+
+from src.lists.all_lists import ScrollAllLists
 from src.top.config_top_lvl_pages import *
 from src.load.save_and_load_data import SaveAndLoadData as sld
-from tkinter.messagebox import showerror
 from src.templates.templates import Templates
 
 
@@ -10,7 +12,7 @@ class AddNewCategory(ctk.CTkToplevel):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
     """
-    def __init__(self, main_window, *args, **kwargs):
+    def __init__(self, main_window: any, *args, **kwargs):
 
         super().__init__(*args, **kwargs)
         self.__main_window = main_window
@@ -106,7 +108,7 @@ class EditNameShoppingList(AddNewCategory):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
     """
-    def __init__(self, main_window, scroll_all_lists, *args, **kwargs):
+    def __init__(self, main_window: any, scroll_all_lists: ScrollAllLists, *args, **kwargs):
         super().__init__(main_window, *args, **kwargs)
         self.__main_window = main_window
         self.__scroll_all_lists = scroll_all_lists
@@ -151,7 +153,7 @@ class EditProduct(ctk.CTkToplevel):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
     """
-    def __init__(self, main_window, scroll_frame, *args, **kwargs):
+    def __init__(self, main_window: any, scroll_frame: any, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.__main_window = main_window
         self.__scroll_frame = scroll_frame
@@ -239,6 +241,7 @@ class EditProduct(ctk.CTkToplevel):
 
         self.__scroll_frame.set_new_text_for_checkbox(check_box, new_text)
 
+
     def save_button_click_handler(self) -> None:
         """
         Обрабатывает клик по кнопке сохранения списка покупок
@@ -298,7 +301,7 @@ class AddProduct(EditProduct):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
     """
-    def __init__(self, main_window, scroll_frame, *args, **kwargs):
+    def __init__(self, main_window: any, scroll_frame: any, *args, **kwargs):
         super().__init__(main_window, scroll_frame, *args, **kwargs)
 
         self.__main_window = main_window
@@ -346,11 +349,12 @@ class AddProduct(EditProduct):
         self.destroy()
 
 
+
 class ConfirmationPage(ctk.CTkToplevel):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
     """
-    def __init__(self,  main_window, scroll_frame, *args, **kwargs):
+    def __init__(self,  main_window: any, scroll_frame: any, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.__main_window = main_window
         self.__scroll_frame = scroll_frame
@@ -422,7 +426,7 @@ class ConfirmationClearScrollPlace(ConfirmationPage):
     """
     Класс, описывающий функционал окна верхнего уровня и его виджеты
     """
-    def __init__(self,  main_window, scroll_frame, *args, **kwargs):
+    def __init__(self,  main_window: any, scroll_frame: any, *args, **kwargs):
         super().__init__(main_window, scroll_frame, *args, **kwargs)
         self.__main_window = main_window
         self.__scroll_frame = scroll_frame
@@ -462,7 +466,7 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
     """
     Класс, описывающий объект, который открывает выбранный список и демонстрирует его содержимое
     """
-    def __init__(self,  main_window, scroll_frame, *args, **kwargs):
+    def __init__(self,  main_window: any, scroll_frame: any, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.__main_window = main_window
@@ -492,6 +496,7 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
         self.__scroll_view_list_history = ctk.CTkScrollableFrame(self, width=wh_solf, height=ht_solf, fg_color=fgc_solf, corner_radius=cr_solf)
         self.__scroll_view_list_history.place(relx=0.05, rely=0.05)
 
+
     def __config_cancel_button(self) -> None:
         """
         Формирует параметры и стили кнопки закрытия окна
@@ -500,6 +505,7 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
                                          text_color=tc_cbtn, border_width=bw_cbtn, hover_color=hc_cbtn, font=ft_cbtn)
         self.__close_btn.place(relx=0.39, rely=0.83)
         self.__close_btn.configure(command=self.cancel_button_click_handler)
+
 
     def __load_checkbox_products(self) -> None:
         """
@@ -515,6 +521,7 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
 
             product = ctk.CTkLabel(master=self.__scroll_view_list_history, text=f'{', '.join(elem)}', font=ft_p, fg_color=fgc_p)
             product.grid(sticky="w", padx=(10, 0), pady=10)
+
 
     def cancel_button_click_handler(self) -> None:
         """
