@@ -60,3 +60,14 @@ class SaveAndLoadData:
         with open(path_dir + r'\shopping_lists.json', 'r') as f:
             load_data = json.load(f)
             return load_data
+
+
+    @staticmethod
+    def write_data_in_shopping_lists(load_data) -> bool:
+        """
+        Записывает полученные данные в файл shopping_lists.json
+        Возвращает True
+        """
+        with open(path_dir + r'\shopping_lists.json', 'w') as f:
+            json.dump(load_data, f, ensure_ascii=False, indent=4)
+            return True
