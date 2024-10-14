@@ -444,3 +444,22 @@ class ConfirmationClearScrollPlace(ConfirmationPage):
         self.destroy()
 
         return
+
+
+class ViewListPurchaseHistory(ctk.CTkToplevel):
+    """
+    Класс, описывающий объект, который открывает выбранный список и демонстрирует его содержимое
+    """
+    def __init__(self,  main_window, scroll_frame, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.__main_window = main_window
+        self.__scroll_frame = scroll_frame
+        self.__load_purchase_history = sld.read_data_with_purchase_history() if sld.check_file_purchase_history() else {}
+
+        self.__scroll_view_list_history = None
+
+        self.__config_window()
+        self.__config_scroll_frame()
+        self.__config_cancel_button()
+        self.__load_checkbox_products()
