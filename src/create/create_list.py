@@ -92,8 +92,7 @@ class ScrollCreateList(ctk.CTkScrollableFrame):
     def get_selected_checkbox(self) -> (str, ctk.CTkCheckBox) or (None, None):
         """
         Обходит список чекбоксов, определяет активный чекбокс если такой имеется и возвращает кортеж из его текста и ссылки на него,
-        Если в списке нет активных чекбоксов то возвращает кортеж (None, None)
-        :return:
+        :return: Если в списке нет активных чекбоксов то возвращает кортеж (None, None)
         """
         for checkbox in self.__list_checkboxes:
             if checkbox.get() == 1:
