@@ -136,3 +136,11 @@ class MainPage(ctk.CTk):
         self.__history_page = PurchaseHistory(self)
 
         self.withdraw()
+
+    def run_program(self) -> None:
+        """
+        Запускает главное окно приложения
+        """
+        self.lift()
+        self.attributes('-topmost', True)
+        self.mainloop()
