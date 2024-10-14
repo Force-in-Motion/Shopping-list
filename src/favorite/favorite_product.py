@@ -22,6 +22,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
         self.__load_checkbox_products()
 
+
     def __load_checkbox_products(self) -> None:
         """
         Загружает в скролл фрейм все продукты этого списка в виде чекбоксов
@@ -34,6 +35,7 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
             product.grid(sticky="w", padx=(10, 0), pady=10)
 
             self.__list_checkboxes.append(product)
+
 
     def create_checkbox(self, name_product: str, count_product: int, category: str) -> None:
         """
@@ -79,8 +81,8 @@ class ScrollFavoriteProducts(ctk.CTkScrollableFrame):
 
     def delete_checkbox(self) -> None:
         """
-        Внутри себя вызывает другую функцию, при помощи которой, получает список активных чекбоксов
-        Обходит этот список и удаляет его элементы из скролл фрейма и из списка чекбоксов
+        Путем вызова другого метода получает список активных чекбоксов
+        Удаляет все полученные элементы списка ативных чекбоксов из скролл фрейма и из списка чекбоксов
         """
         for checkbox in self.create_list_select_checkboxes():
             checkbox.destroy()
