@@ -103,3 +103,12 @@ class MainPage(ctk.CTk):
         self.__main_frame = MainFrame(self, master=self, width=wh_f, height=ht_f, fg_color=fgc_f, corner_radius=cr_f)
         self.__main_frame.pack()
         self.__main_frame.pack_propagate(False)
+
+
+    def add_list_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке добавления список покупок
+        """
+        self.__add_list_page = CreateList(self)
+
+        self.withdraw()
