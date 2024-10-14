@@ -471,3 +471,11 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
         """
         self.title(ttl_olph)
         self.geometry(gt_olph)
+
+
+    def __config_scroll_frame(self) -> None:
+        """
+        Формирует параметры и стили области просмотра списка покупок
+        """
+        self.__scroll_view_list_history = ctk.CTkScrollableFrame(self, width=wh_solf, height=ht_solf, fg_color=fgc_solf, corner_radius=cr_solf)
+        self.__scroll_view_list_history.place(relx=0.05, rely=0.05)
