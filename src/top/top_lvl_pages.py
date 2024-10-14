@@ -182,3 +182,13 @@ class EditProduct(ctk.CTkToplevel):
         self.__count_product = ctk.CTkEntry(self, placeholder_text=pht_cp, placeholder_text_color=phtc_cp,
                                           width=wh_cp, height=ht_cp, fg_color=fgc_cp, font=ft_cp, text_color=tc_cp)
         self.__count_product.place(relx=0.373, rely=0.2)
+
+    def __config_category_list(self) -> None:
+        """
+        Формирует в себе список, доступных по умолчанию, категорий товара
+        :return:
+        """
+        self.__category_product = ctk.CTkComboBox(self,  text_color=tc_c,  width=wh_c, height=ht_c, fg_color=fgc_c, font=ft_c,
+                                        state=st_c, button_color=bc_c)
+        self.__category_product.configure(values=self.__list_categories.get("cs"))
+        self.__category_product.place(relx=0.52, rely=0.2)
