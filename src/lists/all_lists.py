@@ -24,3 +24,16 @@ class ScrollAllLists(ctk.CTkScrollableFrame):
 
 
 
+class MenuButtonsAllLists(ctk.CTkFrame):
+    """
+    Класс- контейнер, формирует область с кнопками, отвечающими за функционал страницы
+    """
+    def __init__(self, main_window: AllLists, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__main_window = main_window
+
+        self.__label_add_list = None
+
+        self.__config_label_add_list()
+        self.__config_add_list_button()
+        self.__config_menu_buttons()
