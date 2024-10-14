@@ -92,3 +92,13 @@ class SaveAndLoadData:
         with open(path_dir + r'\favorites_products.json', 'w') as f:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
+
+
+    @staticmethod
+    def read_data_with_purchase_history() -> dict:
+        """
+        Считывает и возвращает данные из файла purchase_history.json
+        """
+        with open(path_dir + r'\purchase_history.json', 'r') as f:
+            load_data = json.load(f)
+            return load_data
