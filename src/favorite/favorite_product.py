@@ -176,6 +176,7 @@ class MenuButtonsFavoriteProducts(ctk.CTkFrame):
         self.__cancel_btn.place(relx=0.705, rely=0.65)
 
 
+
 class FavoriteProducts(ctk.CTkToplevel):
     """
     Мэйн класс страницы, в себе формирует основные контейнеры (фреймы), содержащие остальные виджеты страницы, а так же основную логику страницы
@@ -199,6 +200,7 @@ class FavoriteProducts(ctk.CTkToplevel):
         self.__config_logo()
         self.__config_scroll_frame()
         self.__config_menu_buttons()
+
 
     def __config_window(self) -> None:
         """
