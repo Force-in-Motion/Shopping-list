@@ -21,3 +21,21 @@ class MainFrame(ctk.CTkFrame):
         self.__config_logo()
         self.__config_menu_buttons()
         self.__config_exit_button()
+
+
+
+class MainPage(ctk.CTk):
+    """
+    Мэйн класс приложения, в себе формирует основной контейнер (фрейм), содержащий остальные виджеты страницы
+    """
+    def __init__(self):
+        super().__init__()
+        self.__load_data = sld.read_data_with_shopping_lists() if sld.check_file_shopping_lists() else {}
+
+        self.__add_list_page = None
+        self.__all_lists_page = None
+        self.__history_page = None
+        self.__favorite_products_page = None
+
+        self.__config_window()
+        self.__config_main_frame()
