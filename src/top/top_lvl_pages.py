@@ -230,3 +230,20 @@ class EditProduct(ctk.CTkToplevel):
         self.__main_window.update_load_data(old_text, new_text)
 
         self.__scroll_frame.set_new_text_for_checkbox(check_box, new_text)
+
+
+    def save_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке сохранения списка покупок
+        """
+        assert self.name_product != '' and self.count_product != '' and self.category != '', showerror('Ошибка', 'Заполните все поля')
+
+        assert self.count_product.isdigit(), showerror('Ошибка', 'Количество товара может быть только целым числом')
+
+        self.edit_data_checkbox()
+
+        self.__scroll_frame.reset_checkboxes()
+
+        self.__main_window.deiconify()
+
+        self.destroy()
