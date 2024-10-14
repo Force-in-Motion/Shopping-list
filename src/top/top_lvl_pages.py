@@ -333,3 +333,19 @@ class AddProduct(EditProduct):
         self.__main_window.deiconify()
 
         self.destroy()
+
+
+class ConfirmationPage(ctk.CTkToplevel):
+    """
+    Класс, описывающий функционал окна верхнего уровня и его виджеты
+    """
+    def __init__(self,  main_window, scroll_frame, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.__main_window = main_window
+        self.__scroll_frame = scroll_frame
+
+        self.__label_confirm = None
+
+        self.__config_window()
+        self.__config_label_confirm()
+        self.__config_menu_buttons()
