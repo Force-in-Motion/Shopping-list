@@ -380,3 +380,18 @@ class ConfirmationPage(ctk.CTkToplevel):
                                               text_color=tc_clb, border_width=bw_clb, hover_color=hc_clb, font=ft_clb)
         self.__cancel_btn.configure(command=self.cancel_button_click_handler)
         self.__cancel_btn.place(relx=0.64, rely=0.6)
+
+
+    def confirm_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке сохранения списка покупок
+        """
+        self.__main_window.del_target_condition()
+
+        self.__scroll_frame.delete_checkbox()
+
+        self.__main_window.deiconify()
+
+        self.destroy()
+
+
