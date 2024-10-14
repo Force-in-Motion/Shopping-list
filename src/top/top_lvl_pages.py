@@ -414,3 +414,33 @@ class ConfirmationClearScrollPlace(ConfirmationPage):
         super().__init__(main_window, scroll_frame, *args, **kwargs)
         self.__main_window = main_window
         self.__scroll_frame = scroll_frame
+
+
+    def confirm_button_click_handler(self) -> None:
+        """
+        Обрабатывает клик по кнопке сохранения списка покупок
+        """
+        from src.favorite.favorite_product import FavoriteProducts
+
+        self.__scroll_frame.clear_scroll_frame()
+
+        if isinstance(self.__main_window, FavoriteProducts):
+            self.__main_window.load_data_favorites["f"].clear()
+
+            sld.write_data_in_favorites_products(self.__main_window.load_data_favorites)
+
+            self.__main_window.deiconify()
+
+            self.destroy()
+
+            return
+
+        self.__main_window.load_data_purchase_history.clear()
+
+        sld.write_data_in_purchase_history(self.__main_window.load_data_purchase_history)
+
+        self.__main_window.deiconify()
+
+        self.destroy()
+
+        return
