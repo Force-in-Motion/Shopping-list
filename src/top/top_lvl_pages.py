@@ -404,3 +404,13 @@ class ConfirmationPage(ctk.CTkToplevel):
         self.__main_window.deiconify()
 
         self.destroy()
+
+
+class ConfirmationClearScrollPlace(ConfirmationPage):
+    """
+    Класс, описывающий функционал окна верхнего уровня и его виджеты
+    """
+    def __init__(self,  main_window, scroll_frame, *args, **kwargs):
+        super().__init__(main_window, scroll_frame, *args, **kwargs)
+        self.__main_window = main_window
+        self.__scroll_frame = scroll_frame
