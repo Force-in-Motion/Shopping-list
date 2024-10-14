@@ -86,3 +86,12 @@ class MainPage(ctk.CTk):
 
         self.__config_window()
         self.__config_main_frame()
+
+
+    def __config_window(self) -> None:
+        """
+        Формирует параметры и стили главного окна приложения
+        """
+        self.title(ttl_mp)
+        self.geometry(gmt)
+        self.resizable(rsb_wh, rsb_ht)
