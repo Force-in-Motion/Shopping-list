@@ -258,3 +258,9 @@ class EditProduct(ctk.CTkToplevel):
         self.__scroll_frame.reset_checkboxes()
 
         self.destroy()
+
+    def __get_name_product(self) -> str:
+        """
+        Возвращает текущее значение поля ввода имени товара
+        """
+        return self.__name_product.get()
