@@ -200,3 +200,38 @@ class EditProduct(ctk.CTkToplevel):
         self.__logo = ctk.CTkImage(light_image=Image.open(path_logo), size=size_ltl)
         self.__image_label = ctk.CTkLabel(self, image=self.__logo, text=tt_l)
         self.__image_label.place(relx=0.75, rely=0.1)
+
+
+    def __config_menu_buttons(self) -> None:
+        """
+        Формирует в себе кнопки, отвечающие за общий функционал страницы, а так же устанавливает его параметры и стили
+        """
+        self.__save_btn = ctk.CTkButton(self, text=tt_sb, width=wh_sb, fg_color=fgc_sb,
+                                         height=ht_sb, text_color=tc_sb, border_width=bw_sb, hover_color=hc_sb,
+                                         font=ft_sb)
+        self.__save_btn.configure(command=self.save_button_click_handler)
+        self.__save_btn.place(relx=0.04, rely=0.7)
+
+        self.__cancel_btn = ctk.CTkButton(self, text=tt_cb, width=wh_cb, fg_color=fgc_cb,
+                                      height=ht_cb, text_color=tc_cb, border_width=bw_cb, hover_color=hc_cb,
+                                      font=ft_cb)
+        self.__cancel_btn.configure(command=self.cancel_button_click_handler)
+        self.__cancel_btn.place(relx=0.71, rely=0.7)
+
+
+    def __config_menu_buttons(self) -> None:
+        """
+        Формирует в себе кнопки, отвечающие за общий функционал страницы, а так же устанавливает его параметры и стили
+        """
+        self.__save_btn = ctk.CTkButton(self, text=tt_sb, width=wh_sb, fg_color=fgc_sb,
+                                         height=ht_sb, text_color=tc_sb, border_width=bw_sb, hover_color=hc_sb,
+                                         font=ft_sb)
+        self.__save_btn.configure(command=self.save_button_click_handler)
+        self.__save_btn.place(relx=0.04, rely=0.7)
+
+        self.__cancel_btn = ctk.CTkButton(self, text=tt_cb, width=wh_cb, fg_color=fgc_cb,
+                                      height=ht_cb, text_color=tc_cb, border_width=bw_cb, hover_color=hc_cb,
+                                      font=ft_cb)
+        self.__cancel_btn.configure(command=self.cancel_button_click_handler)
+        self.__cancel_btn.place(relx=0.71, rely=0.7)
+
