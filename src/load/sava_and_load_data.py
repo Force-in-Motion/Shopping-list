@@ -24,3 +24,16 @@ class SaveAndLoadData:
             return True
         else:
             return False
+
+
+    @staticmethod
+    def check_file_favorites_products() -> bool:
+        """
+        Проверяет наличие файла txt по указанному пути, в данном случае в папке
+        :return: True или False
+        """
+        file = path_dir + r'\favorites_products.json'
+        if os.path.isfile(file):
+            return True
+        else:
+            return False
