@@ -6,6 +6,7 @@ from tkinter.messagebox import showerror
 
 from src.create.create_list import CreateList
 from src.open.open_list import OpenList
+from src.templates.templates import Templates
 from src.top.top_lvl_pages import ConfirmationPage, EditNameShoppingList
 from src.load.save_and_load_data import SaveAndLoadData as sld
 from src.lists.config_all_lists import *
@@ -223,6 +224,7 @@ class AllLists(ctk.CTkToplevel):
         self.__config_scroll_frame()
         self.__config_menu_buttons()
 
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
 
     def __config_window(self) -> None:
         """

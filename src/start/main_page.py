@@ -82,6 +82,7 @@ class MainPage(ctk.CTk):
         self.__config_window()
         self.__config_main_frame()
 
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
 
     def __config_window(self) -> None:
         """
@@ -137,11 +138,13 @@ class MainPage(ctk.CTk):
         self.withdraw()
 
 
-    def run_program(self) -> None:
+    @classmethod
+    def run_program(cls) -> None:
         """
         Запускает главное окно приложения
         """
-        self.lift()
-        self.attributes('-topmost', True)
-        self.mainloop()
+        page = cls()
+        page.lift()
+        page.attributes('-topmost', True)
+        page.mainloop()
 

@@ -1,3 +1,4 @@
+import sys
 
 class Templates:
 
@@ -6,3 +7,10 @@ class Templates:
         for elem in matrix:
             if data in elem: return True
         return False
+
+    @staticmethod
+    def on_closing() -> None:
+        """
+        Выход из приложения при закрытии главного окна
+        """
+        sys.exit()

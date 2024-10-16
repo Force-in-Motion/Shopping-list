@@ -7,6 +7,7 @@ from PIL import Image
 
 from src.favorite.config_favorite_products import *
 from src.load.save_and_load_data import SaveAndLoadData as sld
+from src.templates.templates import Templates
 from src.top.top_lvl_pages import ConfirmationClearScrollPlace, ConfirmationPage, AddProduct
 
 
@@ -200,6 +201,8 @@ class FavoriteProducts(ctk.CTkToplevel):
         self.__config_logo()
         self.__config_scroll_frame()
         self.__config_menu_buttons()
+
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
 
 
     def __config_window(self) -> None:

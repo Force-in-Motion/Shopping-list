@@ -24,6 +24,7 @@ class AddNewCategory(ctk.CTkToplevel):
         self.__config_input_field()
         self.__config_menu_buttons()
 
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
 
     def __config_window(self) -> None:
         """
@@ -168,6 +169,8 @@ class EditProduct(ctk.CTkToplevel):
         self.__config_input_fields()
         self.__config_menu_buttons()
         self.__config_category_list()
+
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
 
 
     def __config_window(self) -> None:
@@ -364,6 +367,8 @@ class ConfirmationPage(ctk.CTkToplevel):
         self.__config_label_confirm()
         self.__config_menu_buttons()
 
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
+
 
     def __config_window(self) -> None:
         """
@@ -478,6 +483,8 @@ class ViewListPurchaseHistory(ctk.CTkToplevel):
         self.__config_scroll_frame()
         self.__config_cancel_button()
         self.__load_checkbox_products()
+
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
 
 
     def __config_window(self) -> None:

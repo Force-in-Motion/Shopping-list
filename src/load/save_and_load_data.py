@@ -3,6 +3,13 @@ import os
 import os.path
 
 
+path_dir = os.environ.get('LOCALAPPDATA') + r'\Shopping list data'
+
+path_categories = r'src\categories\categories.json'
+
+path_csv = os.path.expanduser('~') + r'\Desktop'
+
+
 class SaveAndLoadData:
 
     @staticmethod
@@ -136,11 +143,5 @@ class SaveAndLoadData:
             json.dump(load_data, f, ensure_ascii=False, indent=4)
             return True
 
-
-path_dir = os.environ.get('LOCALAPPDATA') + r'\Shopping list data'
-
-path_categories = r'src\categories\categories.json'
-
-path_csv = os.path.expanduser('~') + r'\Desktop'
 
 

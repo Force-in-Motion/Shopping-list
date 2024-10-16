@@ -305,6 +305,8 @@ class CreateList(ctk.CTkToplevel):
         self.__config_menu_buttons()
         self.__config_cancel_button()
 
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
+
 
     def __config_window(self) -> None:
         """

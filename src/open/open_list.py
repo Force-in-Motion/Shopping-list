@@ -288,8 +288,7 @@ class OpenList(ctk.CTkToplevel):
         self.__main_window = main_window
 
         self.__load_data = sld.read_data_with_shopping_lists() if sld.check_file_shopping_lists() else {}
-        self.__load_data_favorites = sld.read_data_with_favorites_products() if sld.check_file_favorites_products() else {
-            "f": []}
+        self.__load_data_favorites = sld.read_data_with_favorites_products() if sld.check_file_favorites_products() else {"f": []}
         self.__list_categories = sld.read_categories()
 
         self.__scroll_all_lists = scroll_all_lists
@@ -309,6 +308,8 @@ class OpenList(ctk.CTkToplevel):
         self.__config_menu_buttons()
         self.__config_scroll_frame()
         self.__config_menu_sorted()
+
+        self.protocol("WM_DELETE_WINDOW", Templates.on_closing)
 
 
     def __config_window(self) -> None:
